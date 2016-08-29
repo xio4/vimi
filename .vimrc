@@ -669,7 +669,7 @@ set nocompatible
     " Switch tabs with <Tab>
         nmap <PageDown> :BuffergatorMruCycleNext<CR>
         nmap <PageUp> :BuffergatorMruCyclePrev<CR>
-        nmap <Del> :bp <BAR> bd #<CR>
+        " nmap <Del> :bp <BAR> bd #<CR>
         map <Leader>g :BufOnly<CR>
 
         nmap <S-PageDown> :bn<CR>
@@ -938,6 +938,10 @@ set nocompatible
     \        },
     \    },
     \    'jsx': {
+    \        'extends': 'html',
+    \        'attribute_name': {'class': 'className'},
+    \    },
+     \   'tsx': {
     \        'extends': 'html',
     \        'attribute_name': {'class': 'className'},
     \    },
