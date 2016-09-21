@@ -788,6 +788,7 @@ set nocompatible
 
     " NERDTree
         nmap <F12> :NERDTreeTabsToggle<CR>
+        nmap <F1> :NERDTreeTabsFind<CR>
         let NERDTreeShowBookmarks=1
         let NERDTreeChDirMode=2
         let NERDTreeQuitOnOpen=0
@@ -798,6 +799,7 @@ set nocompatible
         " Use arrows instead of + ~ chars when displaying directories
         let NERDTreeDirArrows=1
         let NERDTreeBookmarksFile= $HOME . '/.vim/.NERDTreeBookmarks'
+        let g:nerdtree_tabs_autofind=1
 
     " Zen Coding
         let g:user_zen_settings = {
@@ -815,8 +817,8 @@ set nocompatible
 
     " UltiSnips
     " make YCM compatible with UltiSnips (using supertab)
-    let g:ycm_key_list_select_completion = ['<Down>']
-    let g:ycm_key_list_previous_completion = ['<Up>']
+    let g:ycm_key_list_select_completion = ['<Enter>', '<C-j>']
+    let g:ycm_key_list_previous_completion = ['<C-k>']
     let g:SuperTabDefaultCompletionType = '<C-n>'
 
     " better key bindings for UltiSnipsExpandTrigger
