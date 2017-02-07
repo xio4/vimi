@@ -295,6 +295,10 @@ set nocompatible
     " Only available when compiled with the +path_extra feature
     set path=.,,**
 
+    " Use clipboard
+    set clipboard+=unnamed
+    set clipboard=unnamedplus
+
 " Status line
     function! FileSize()
         let bytes = getfsize(expand("%:p"))
