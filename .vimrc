@@ -299,6 +299,11 @@ set nocompatible
     set clipboard+=unnamed
     set clipboard=unnamedplus
 
+    " Autoread after 4s of inactivity
+    set autoread
+    au CursorHold * checktime
+
+
 " Status line
     function! FileSize()
         let bytes = getfsize(expand("%:p"))
@@ -671,13 +676,15 @@ set nocompatible
         " vnoremap <Space> zf
 
     " Switch tabs with <Tab>
-        nmap <PageDown> :BuffergatorMruCycleNext<CR>
-        nmap <PageUp> :BuffergatorMruCyclePrev<CR>
+        " nmap <PageDown> :BuffergatorMruCycleNext<CR>
+        " nmap <PageUp> :BuffergatorMruCyclePrev<CR>
+        nnoremap <S-PageDown> :BuffergatorMruCycleNext<CR>
+        nnoremap <S-PageUp> :BuffergatorMruCyclePrev<CR> 
         " nmap <Del> :bp <BAR> bd #<CR>
         map <Leader>g :BufOnly<CR>
 
-        nmap <S-PageDown> :bn<CR>
-        nmap <S-PageUp> :bp<CR>
+        " nmap <S-PageDown> :bn<CR>
+        " nmap <S-PageUp> :bp<CR>
 
         nmap <C-PageDown> :VimwikiDiaryNextDay<CR>
         nmap <C-PageUp> :VimwikiDiaryPrevDay<CR>
