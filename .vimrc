@@ -28,6 +28,7 @@ set nocompatible
         " For FuzzyFinder:
         Bundle 'lfilho/cosco.vim'
         Plugin 'easymotion/vim-easymotion'
+        Plugin 'morhetz/gruvbox'
         Bundle "zoubin/vim-gotofile"
         Bundle 'takac/vim-hardtime'
         Bundle 'termoshtt/toggl.vim'
@@ -41,7 +42,7 @@ set nocompatible
         Bundle 'git://github.com/vim-airline/vim-airline-themes'
         Bundle 'git://github.com/jeetsukumaran/vim-buffergator'
         Plugin 'godlygeek/tabular'
-        Plugin 'ixandidu/vim-markdown'
+        Plugin 'plasticboy/vim-markdown'
         Bundle 'amiorin/vim-fenced-code-blocks'
         Bundle 'git://github.com/ctrlpvim/ctrlp.vim'
         Bundle 'git://github.com/tpope/vim-surround'
@@ -52,17 +53,13 @@ set nocompatible
         Bundle 'git://github.com/altercation/vim-colors-solarized.git'
         Bundle 'git://github.com/gorodinskiy/vim-coloresque.git'
         Plugin 'chriskempson/base16-vim'
-        " Monokai colorscheme
-        " Bundle 'lsdr/monokai'
-        " Bundle 'tomasr/molokai'
-        " colorscheme molokai
         " A tree explorer plugin
         Bundle 'git://github.com/scrooloose/nerdtree.git'
         Bundle 'jistr/vim-nerdtree-tabs'
         " Perform all your vim insert mode completions with Tab
         Bundle 'git://github.com/ervandew/supertab.git'
         Bundle 'git://github.com/powerman/vim-plugin-ruscmd'
-        Bundle 'git://github.com/vim-scripts/YankRing.vim'
+        " Bundle 'git://github.com/vim-scripts/YankRing.vim'
         " Command-T
         " Bundle 'git://github.com/wincent/Command-T.git'
         "" Bundle 'git://github.com/vim-scripts/taglist.vim.git'
@@ -167,8 +164,6 @@ set nocompatible
         Bundle 'git://github.com/leafgarland/typescript-vim'
     " Jade
         Bundle 'git://github.com/digitaltoad/vim-jade.git'
-    " Stylus
-        " Bundle 'git://github.com/wavded/vim-stylus.git'
     " Yaml
         Bundle 'chase/vim-ansible-yaml'
 
@@ -466,26 +461,26 @@ set nocompatible
         " Switch type of line numbers
         " http://stackoverflow.com/questions/4387210/vim-how-to-map-two-tasks-under-one-shortcut-key
         " Vim 7.3 required
-        let g:relativenumber = 0
-        function! ToogleRelativeNumber()
-          if g:relativenumber == 0
-            let g:relativenumber = 1
-            set norelativenumber
-            set number
-            echo "Show line numbers"
-          elseif g:relativenumber == 1
-            let g:relativenumber = 2
-            set nonumber
-            set relativenumber
-            echo "Show relative line numbers"
-          else
-            let g:relativenumber = 0
-            set nonumber
-            set norelativenumber
-            echo "Show no line numbers"
-          endif
-        endfunction
-        map <Leader>nm :call ToogleRelativeNumber()<cr>
+"        let g:relativenumber = 0
+"        function! ToogleRelativeNumber()
+"          if g:relativenumber == 0
+"            let g:relativenumber = 1
+"            set norelativenumber
+"            set number
+"            echo "Show line numbers"
+"          elseif g:relativenumber == 1
+"            let g:relativenumber = 2
+"            set nonumber
+"            set relativenumber
+"            echo "Show relative line numbers"
+"          else
+"            let g:relativenumber = 0
+"            set nonumber
+"            set norelativenumber
+"            echo "Show no line numbers"
+"          endif
+"        endfunction
+"        map <Leader>nm :call ToogleRelativeNumber()<cr>
 
     " ,g
         " Toggle GUI elements
@@ -779,8 +774,10 @@ set nocompatible
         " http://stackoverflow.com/questions/7278267/incorrect-colors-with-vim-in-iterm2-using-solarized#comment11144700_7278548
         let g:solarized_termcolors=256
         set background=dark
+        let g:gruvbox_contrast_dark='hard'
         try
-            colorscheme solarized
+            " colorscheme solarized
+            colorscheme gruvbox
         catch /^Vim\%((\a\+)\)\=:E185/
             echo "Solarized theme not found. Run :BundleInstall"
         endtry
@@ -986,7 +983,8 @@ set nocompatible
     " autocmd InsertLeave * :set relativenumber
     set lazyredraw
     set timeoutlen=1000 ttimeoutlen=0
-    let g:airline_theme='cool'
+    " let g:airline_theme='cool'
+    let g:airline_theme='gruvbox'
 
     set nofoldenable
     let g:airline#extensions#tabline#enabled = 0
@@ -1021,5 +1019,5 @@ set nocompatible
     let s:vimwiki_autowriteall=1
     let autowriteall=1
     " autocmd VimEnter * :BufOnly
-    set suffixesadd+=.js
-    " set path+=$PWD/node_modules            
+    set suffixesadd+=.js,.jsx
+    set path+=**/node_modules            
