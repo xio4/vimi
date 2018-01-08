@@ -29,7 +29,8 @@ set nocompatible
         Bundle 'lfilho/cosco.vim'
         Plugin 'easymotion/vim-easymotion'
         Plugin 'morhetz/gruvbox'
-        Bundle "zoubin/vim-gotofile"
+        " Bundle "zoubin/vim-gotofile"
+        Bundle 'moll/vim-node'
         Bundle 'takac/vim-hardtime'
         Bundle 'termoshtt/toggl.vim'
         Bundle 'j5shi/ctrlp_bdelete.vim'
@@ -592,6 +593,11 @@ set nocompatible
         " Open file under cursor in a new vertical split
         nmap gf :below wincmd f<CR>
 
+        " New directories for vim-gotofile
+        " au BufNewFile,BufRead *.js,*.jsx,*.es6,*.ts,*.tsx call gotofile#SetOptions({
+        " \ 'moduleDirectory': ['node_modules', 'packages']
+        " \ })
+
     " Create a new window relative to the current one
         nmap <Leader><left>  :leftabove  vnew<CR>
         nmap <Leader><right> :rightbelow vnew<CR>
@@ -752,6 +758,7 @@ set nocompatible
 " Plugins
 
     " Javascript
+        let g:javascript_plugin_jsdoc=1
         let g:syntastic_check_on_open = 1
         let g:syntastic_less_checkers = ['']
         let g:syntastic_jsx_checkers = ['eslint']

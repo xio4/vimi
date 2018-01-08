@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/home/luser/work/tinkoff/files/tinkoff_sms'
 let g:netrw_dirhist_2='/home/luser/work/tinkoff/platform2/packages/payments-core/components/ui/SuccessDescription/__tests__'
 let g:netrw_dirhist_3='/home/luser/temp/UnrealEngine/Engine/Build/BatchFiles/Linux'
@@ -8,3 +8,4 @@ let g:netrw_dirhist_5='/home/luser/work/tinkoff/platform1/packages/payments/auto
 let g:netrw_dirhist_6='/home/luser/work/tinkoff/platform1/packages/payments/automation/stories'
 let g:netrw_dirhist_7='/home/luser/work/tinkoff/platform1/packages/payments/automation/stories/Избранное'
 let g:netrw_dirhist_8='/home/luser/work/tinkoff/platform1/packages/core/services/request'
+let g:netrw_dirhist_9='/home/luser'
