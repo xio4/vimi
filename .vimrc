@@ -32,7 +32,6 @@ set nocompatible
         " Bundle "zoubin/vim-gotofile"
         Bundle 'moll/vim-node'
         Bundle 'takac/vim-hardtime'
-        Bundle 'termoshtt/toggl.vim'
         Bundle 'j5shi/ctrlp_bdelete.vim'
         Bundle 'vim-jp/vital.vim'
         Bundle 'L9'
@@ -138,7 +137,7 @@ set nocompatible
         " Syntax for jQuery keywords and css selectors
         Bundle 'git://github.com/itspriddle/vim-jquery.git'
         " CoffeeScript support
-        Bundle 'git://github.com/kchmck/vim-coffee-script.git'
+        "Bundle 'git://github.com/kchmck/vim-coffee-script.git'
         Bundle 'git://github.com/walm/jshint.vim.git'
     " JSX
         Bundle 'mxw/vim-jsx'
@@ -153,7 +152,7 @@ set nocompatible
     " Python/Django
         "Bundle 'git://github.com/fs111/pydoc.vim.git'
     " Perl
-        Bundle 'git://github.com/petdance/vim-perl.git'
+        "Bundle 'git://github.com/petdance/vim-perl.git'
     " Ruby/Rails
         " Editing and compiling Ruby
         " Bundle 'git://github.com/vim-ruby/vim-ruby.git'
@@ -849,7 +848,7 @@ set nocompatible
 
       let g:vimwiki_list = [wiki]
 
-    set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/bower_components/*,*/node_modules/*
+    set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/bower_components/*,*/node_modules/*,*/.tmp/*,*/.cache/*
     " set nonumber
     " set relativenumber
     " first, enable status line always
@@ -1005,8 +1004,6 @@ set nocompatible
     let g:hardtime_ignore_quickfix = 1
     let g:hardtime_maxcount = 3
 
-    "toggl
-    let g:toggl_api_token = "d990c0fb76de4364d65c83b36f7cad24"
     call ctrlp_bdelete#init()
     let g:ctrlp_open_multiple_files='2vjr'
     " <Leader>f{char} to move to {char}
@@ -1026,5 +1023,5 @@ set nocompatible
     let s:vimwiki_autowriteall=1
     let autowriteall=1
     " autocmd VimEnter * :BufOnly
-    set suffixesadd+=.js,.jsx
-    set path+=**/node_modules            
+    set suffixesadd+=.js,.jsx,.ts,.tsx
+    set path+=$PWD/node_modules/**
