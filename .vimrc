@@ -135,7 +135,7 @@ set nocompatible
         Plugin 'marijnh/tern_for_vim'
         " Bundle 'Raimondi/delimitMate'
         " Syntax for jQuery keywords and css selectors
-        Bundle 'git://github.com/itspriddle/vim-jquery.git'
+        "Bundle 'git://github.com/itspriddle/vim-jquery.git'
         " CoffeeScript support
         "Bundle 'git://github.com/kchmck/vim-coffee-script.git'
         Bundle 'git://github.com/walm/jshint.vim.git'
@@ -147,8 +147,8 @@ set nocompatible
         Bundle 'git://github.com/fatih/vim-go'
         Plugin 'nsf/gocode', {'rtp': 'vim/'}
     " PHP
-        Bundle 'git://github.com/vim-scripts/php.vim--Garvin.git'
-        Bundle 'git://github.com/2072/PHP-Indenting-for-VIm.git'
+        "Bundle 'git://github.com/vim-scripts/php.vim--Garvin.git'
+        "Bundle 'git://github.com/2072/PHP-Indenting-for-VIm.git'
     " Python/Django
         "Bundle 'git://github.com/fs111/pydoc.vim.git'
     " Perl
@@ -833,7 +833,16 @@ set nocompatible
     " make YCM compatible with UltiSnips (using supertab)
     let g:ycm_key_list_select_completion = ['<Enter>', '<C-j>']
     let g:ycm_key_list_previous_completion = ['<C-k>']
+
+    " Start autocompletion after 3 chars
     let g:SuperTabDefaultCompletionType = '<C-n>'
+    let g:ycm_min_num_of_chars_for_completion = 3
+    let g:ycm_min_num_identifier_candidate_chars = 3
+    let g:ycm_enable_diagnostic_highlighting = 0
+
+    " Don't show YCM's preview window 
+    set completeopt-=preview
+    let g:ycm_add_preview_to_completeopt = 0
 
     " better key bindings for UltiSnipsExpandTrigger
     let g:UltiSnipsExpandTrigger = "<tab>"
@@ -848,7 +857,7 @@ set nocompatible
 
       let g:vimwiki_list = [wiki]
 
-    set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/bower_components/*,*/node_modules/*,*/.tmp/*,*/.cache/*
+    set wildignore+=*/tmp/*,*.o,*.so,*.swp,*.zip,*/bower_components/*,*/node_modules/*,*/.tmp/*,*/.cache/*
     " set nonumber
     " set relativenumber
     " first, enable status line always
@@ -1024,4 +1033,4 @@ set nocompatible
     let autowriteall=1
     " autocmd VimEnter * :BufOnly
     set suffixesadd+=.js,.jsx,.ts,.tsx
-    set path+=$PWD/node_modules/**
+    set path+=./node_modules/**
