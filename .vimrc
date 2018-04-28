@@ -125,6 +125,7 @@ set nocompatible
         Plugin 'KabbAmine/vCoolor.vim'
         Plugin 'wavded/vim-stylus'
     " JavaScript
+        " Plugin 'iamcco/go-to-file.vim'
         " Vastly improved vim's javascript indentation
         Bundle 'git://github.com/pangloss/vim-javascript.git'
         " Bundle 'jelera/vim-javascript-syntax'
@@ -544,11 +545,6 @@ set nocompatible
         nmap <C-k> <C-W>k
         nmap <C-l> <C-W>l
 
-    " ,v
-        " Open the .vimrc in a new buffer
-        nmap <leader>v :e $MYVIMRC<CR>
-        " :cabbrev e NERDTreeClose<CR>:e!
-
     " ,s
         nmap <leader>s :e ~/.vimi/.vim/UltiSnips/all.snippets<CR>
 
@@ -589,8 +585,8 @@ set nocompatible
         " noremap k gk
 
     " gf
-        " Open file under cursor in a new vertical split
-        nmap gf :below wincmd f<CR>
+        " Open file under cursor in a new tab
+        nmap <Leader>gf <Plug>NodeTabGotoFile<CR>
 
         " New directories for vim-gotofile
         " au BufNewFile,BufRead *.js,*.jsx,*.es6,*.ts,*.tsx call gotofile#SetOptions({
@@ -850,9 +846,11 @@ set nocompatible
     " let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
     let g:UltiSnipsListSnippets = "<s-tab>"
 
+    let g:ternServerTimeout=1000
+
     " VimWiki
       let wiki = {}
-      let wiki.path = '~/Dropbox/vimwiki/'
+      let wiki.path = '~/vimwiki/'
       let wiki.nested_syntaxes = {'javascript': 'javascript', 'python': 'python', 'c++': 'cpp'}
 
       let g:vimwiki_list = [wiki]
@@ -1033,4 +1031,4 @@ set nocompatible
     let autowriteall=1
     " autocmd VimEnter * :BufOnly
     set suffixesadd+=.js,.jsx,.ts,.tsx
-    set path+=./node_modules/**
+    set path+=$PWD/node_modules/**
