@@ -879,36 +879,36 @@ set nocompatible
     " au InsertLeave * hi Cursor guibg=red
     " au InsertEnter * hi Cursor guibg=green
     set guifont=Menlo\ for\ Powerline:h13
-  let g:plantuml_executable_script='java -jar ~/plantuml.jar'
+    let g:plantuml_executable_script='java -jar ~/plantuml.jar'
 
-  au BufNewFile,BufRead *.js set syntax=javascript.jsx
+    au BufNewFile,BufRead *.js set syntax=javascript.jsx
 
-  autocmd FileType javascript noremap <buffer>  <F6> <Esc>magg=G`a
-  " autocmd FileType javascript noremap <buffer>  <F6> <Esc>:call JsBeautify()<cr>
-  " autocmd FileType less noremap <buffer>  <F6> <Esc>:call CSSBeautify()<cr>
-  autocmd FileType less noremap <buffer>  <F6> <Esc>magg=G`a
-  autocmd FileType go noremap <buffer>  <F6> <Esc>magg=G`a
-  autocmd FileType html noremap <buffer>  <F6> <Esc>:call HTMLBeautify()<cr>
-  autocmd FileType wiki noremap <buffer>  <F6> <Esc>:call HTMLBeautify()<cr>
-  map <Leader>l :NERDTreeFind<CR>
-  map <c-g> :CtrlPBuffer<CR>
-  let g:ctrlp_map = '<c-f>'
-  let g:ctrlp_cmd = 'CtrlPMRUFiles'
-  " Setup some default ignores
-  let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site|node_modules|bower_components|assets|build|dist|server\logs|upload)$',
-    \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
-  \}
+    autocmd FileType javascript noremap <buffer>  <F6> <Esc>magg=G`a
+    " autocmd FileType javascript noremap <buffer>  <F6> <Esc>:call JsBeautify()<cr>
+    " autocmd FileType less noremap <buffer>  <F6> <Esc>:call CSSBeautify()<cr>
+    autocmd FileType less noremap <buffer>  <F6> <Esc>magg=G`a
+    autocmd FileType go noremap <buffer>  <F6> <Esc>magg=G`a
+    autocmd FileType html noremap <buffer>  <F6> <Esc>:call HTMLBeautify()<cr>
+    autocmd FileType wiki noremap <buffer>  <F6> <Esc>:call HTMLBeautify()<cr>
+    map <Leader>l :NERDTreeFind<CR>
+    map <c-g> :CtrlPBuffer<CR>
+    let g:ctrlp_map = '<c-f>'
+    let g:ctrlp_cmd = 'CtrlPMRUFiles'
+    " Setup some default ignores
+    let g:ctrlp_custom_ignore = {
+                \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site|node_modules|bower_components|assets|build|dist|server\logs|upload)$',
+                \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
+                \}
 
-  " Use the nearest .git directory as the cwd
-  " This makes a lot of sense if you are working on a project that is in version
-  " control. It also supports works with .svn, .hg, .bzr.
-  let g:ctrlp_working_path_mode = 'r'
+    " Use the nearest .git directory as the cwd
+    " This makes a lot of sense if you are working on a project that is in version
+    " control. It also supports works with .svn, .hg, .bzr.
+    let g:ctrlp_working_path_mode = 'r'
 
-  set ts=4 sw=4 et
-  let g:indent_guides_start_level = 2
-  let g:indent_guides_guide_size = 1
-  let g:buffergator_suppress_keymaps=1
+    set ts=4 sw=4 et
+    let g:indent_guides_start_level = 2
+    let g:indent_guides_guide_size = 1
+    let g:buffergator_suppress_keymaps=1
 
     " Save session on quitting Vim
     "autocmd VimLeave * NERDTreeClose
@@ -1032,3 +1032,16 @@ set nocompatible
     " autocmd VimEnter * :BufOnly
     set suffixesadd+=.js,.jsx,.ts,.tsx
     set path+=$PWD/node_modules/**
+
+    " My remapping
+    "inoremap <esc> <nop>
+    "inoremap jk <esc>
+
+    " Special commands
+    function! ReplacePathToAbs()
+        execute ":normal! di'F'F'"
+        let @o = fnamemodify(expand('%:h') . '/' . @@, ':.')
+        execute ':normal! "op0'
+    endfunction
+
+    autocmd FileType javascript nnoremap <Leader>ra :<c-u>call ReplacePathToAbs()<cr>
