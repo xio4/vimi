@@ -30,7 +30,8 @@ set nocompatible
         Plugin 'easymotion/vim-easymotion'
         Plugin 'morhetz/gruvbox'
         " Bundle "zoubin/vim-gotofile"
-        Bundle 'moll/vim-node'
+        "Bundle 'moll/vim-node'
+        Bundle 'git://github.com/xio4/vim-node'
         Bundle 'takac/vim-hardtime'
         Bundle 'j5shi/ctrlp_bdelete.vim'
         Bundle 'vim-jp/vital.vim'
