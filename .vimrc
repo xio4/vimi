@@ -69,7 +69,7 @@ set nocompatible
         " Shows 'Nth match out of M' at every search
         " Bundle 'git://github.com/vim-scripts/IndexedSearch.git'
         " Bundle 'git://github.com/rphillips/vim-zoomwin.git'
-        Plugin 'majutsushi/tagbar'
+        " Plugin 'majutsushi/tagbar'
         Bundle 'git://github.com/mattn/emmet-vim.git'
         Plugin 'nathanaelkane/vim-indent-guides'
         Plugin 'editorconfig/editorconfig-vim'
@@ -1046,3 +1046,4 @@ set nocompatible
     endfunction
 
     autocmd FileType javascript nnoremap <Leader>ra :<c-u>call ReplacePathToAbs()<cr>
+    autocmd FileType typescript nnoremap <Leader>ra :<c-u>call ReplacePathToAbs()<cr>
